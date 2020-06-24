@@ -1,0 +1,90 @@
+import persona
+
+
+
+personasRegistradas=[]
+opcion=0
+
+
+def AgregarPersona():
+    global personasRegistradas
+    nuiPersona=input("NUI de la persona: ")
+    ind=1
+    for ind in personasRegistradas:
+      if nuiPersona in personasRegistradas:
+        print("Esa persona ya existe")
+        ind=ind+1
+    nombrePersona=input("Nombre de la persona: ")
+    apellidoPersona=input("Apellido de la persona: ")
+    edadPersona=input("Edad de la persona: ")
+    generoPersona=input("Genero de la persona: ")
+    cumplePersona=input("Cumpleanos de la persona: ")
+    notaPersona=input("Nota de la persona: ")
+    nuevaPersona=persona.Persona(nuiPersona, nombrePersona, apellidoPersona, edadPersona, generoPersona, [], cumplePersona, notaPersona)
+    personasRegistradas.append(nuevaPersona)
+    return nuevaPersona
+    
+def EliminarPersona():
+  nuiPersona=input("Ingrese el nui de la persona a  eliminar: ")
+  ind=1
+  for ind in personasRegistradas:
+      if nuiPersona == ind.nui:
+        personasRegistradas.remove(ind)
+        print("La persona ha sido eliminada")
+        
+  
+def AgergarTelefono():
+  nuiTelefono=input("Ingrese el NUI de la persona: ")
+  telefono=input("Ingrese el telefono: ")
+  ind=1 
+  for ind in personasRegistradas:
+    if nuiTelefono == ind.nui:
+        ind.agregarTelefono(telefono)
+        print("Se ha agregado el telefono")
+        
+  
+  
+  
+def GuardarArchivo():
+  pass
+
+def CargarArchivo():
+  pass
+  
+def imprimirPersonas():
+  for p in personasRegistradas:
+    p.imprimir()
+  
+
+
+while(opcion!="6"):
+  print("Bienvenido al sistema de personas")
+  print("Menu:")
+  print("0. Imprimir Todas las Personas")
+  print("1. Agregar Persona")
+  print("2. Eliminar Persona")
+  print("3. Agregar Telefono")
+  print("4. Guardar a archivo")
+  print("5. Cargar archivo")
+  print("6. Salir")
+  opcion=input("Ingrese una opcion:")
+  if(opcion=="1"):
+    AgregarPersona()
+  elif(opcion=="2"):
+    EliminarPersona()
+  elif(opcion=="3"):
+    AgergarTelefono()
+  elif(opcion=="4"):
+    GuardarArchivo()
+  elif(opcion=="5"):
+    CargarArchivo()
+  elif(opcion=="0"):
+    imprimirPersonas()
+  elif(opcion=="6"):
+    print("Salir")
+  else:
+    print("Error")
+  
+    
+  
+   

@@ -1,0 +1,26 @@
+class Persona:
+  
+
+  def __init__(self,nui, nombre,apellido,edad,genero,telefonos,cumpleanos,nota):
+    self.nui=nui
+    self.nombre=nombre
+    self.apellido=apellido
+    self.edad=edad
+    self.genero=genero
+    self.telefonos=telefonos
+    self.cumpleanos=cumpleanos
+    self.nota=nota
+    
+    
+  def imprimir(self):
+    print(self.nombre)
+    print(self.apellido)
+    print(self.edad)
+    print(self.genero)
+    print(self.telefonos)
+    print(self.cumpleanos)
+    print(self.nota)
+    
+  def agregarTelefono(self,telefono):
+    self.telefonos.append(telefono)
+  

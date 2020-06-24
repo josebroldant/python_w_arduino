@@ -1,0 +1,37 @@
+def ContarPalabras():
+  print("Iniciando Contar Palabras")
+  texto=input("Ingrese la frase: ")
+  t=dict()
+  vector=texto.split(' ')
+  print(vector)
+  for p in vector:
+    print(p)
+    if p in t.keys():
+      t[p]=t[p]+1
+    else:
+      t[p]=1
+  print(t)
+  
+  
+def Hotel():
+  print("Iniciando Hotel")
+  opcion=0;
+  while(opcion!="4"):
+    print("1. Agregar Habitacion")
+    print("2. Registrar Huesped")
+    print("3. Imprimir Hotel")
+    print("4. Salir")
+    opcion=input("Ingrese La opcion")
+    if(opcion=="1"):
+      AgregarHabitacion()
+    
+
+def AgregarHabitacion():
+  hotel=dict()
+  hab=input("Ingrese la habitacion: ")
+  hotel[hab]=input("Ingrese el huesped: ")
+  print(hotel)
+  
+
+ContarPalabras()
+Hotel()
